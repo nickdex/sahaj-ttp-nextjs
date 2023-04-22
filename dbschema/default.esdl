@@ -8,7 +8,8 @@ module default {
         required property email -> str;
         property gender -> Gender;
         property avatar_url -> str;
-        required link teacher -> Teacher
+        required property teacher -> str;
+        # required link teacher -> Teacher
     }
 
     type Teacher extending Person {
