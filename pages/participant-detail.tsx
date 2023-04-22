@@ -40,11 +40,11 @@ export default function TeacherForm() {
   const [participants, setParticipants] = useState([
     {
       id: 1,
-      fullName: 'Natalie Paisley',
+      full_name: 'Natalie Paisley',
       age: '26',
       email: 'natalie@gmail.com',
       gender: 'Female',
-      teacherName: 'Nikhil Warke',
+      teacher: 'Nikhil Warke',
       avatar: '/img/team-3.jpg'
     }
   ])

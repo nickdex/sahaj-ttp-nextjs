@@ -1,8 +1,10 @@
-import { Card, CardBody, CardFooter, CardHeader, Tooltip, Typography } from '@material-tailwind/react'
-import Image from 'next/image'
+import { Card, CardBody, CardFooter, CardHeader, Tooltip, Typography } from '@material-tailwind/react';
+import Image from 'next/image';
 
 export default function Example({ profile }) {
-  const { full_name, age, email, gender, teacher_name, avatar_url } = profile
+  console.log(profile);
+  
+  const { full_name, age, email, gender, teacher, avatar_url } = profile
   return (
     <Card className="w-96">
       <CardHeader floated={false} className="h-80">
@@ -26,7 +28,7 @@ export default function Example({ profile }) {
         <div className="flex items-center py-3">
           <Typography className="mr-3 font-medium font-bold">Recommending Teacher:</Typography>
           <Typography color="blue" className="font-medium" textGradient>
-            {teacher_name}
+            {teacher}
           </Typography>
         </div>
       </CardBody>
