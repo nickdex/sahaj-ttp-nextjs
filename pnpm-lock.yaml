@@ -16,6 +16,9 @@ dependencies:
   autoprefixer:
     specifier: 10.4.14
     version: 10.4.14(postcss@8.4.23)
+  edgedb:
+    specifier: ^1.1.0
+    version: 1.1.0
   eslint:
     specifier: 8.39.0
     version: 8.39.0
@@ -865,6 +868,12 @@ packages:
     engines: {node: '>=6.0.0'}
     dependencies:
       esutils: 2.0.3
+    dev: false
+
+  /edgedb@1.1.0:
+    resolution: {integrity: sha512-pRDJyHWHntAw1cJyOlkoNeWCHTUPU1tWlQpcEPGyHEBlfazYJHUpTShkmJ23oopjVTmlmGiSrfcsB74Tr5qo0w==}
+    engines: {node: '>= 12.0.0'}
+    hasBin: true
     dev: false
 
   /electron-to-chromium@1.4.369:
