@@ -1,5 +1,8 @@
 FROM node:18-alpine AS deps
 RUN apk add --no-cache libc6-compat
+RUN apk add --no-cache curl \
+    && curl -sL https://unpkg.com/@pnpm/self-installer | node
+
 WORKDIR /app
 
 COPY package.json pnpm-lock.yaml ./
@@ -33,4 +36,4 @@ EXPOSE 3000
 
 ENV PORT 3000
 
-CMD ["pnpm", "start"]
+CMD ["npm", "start"]

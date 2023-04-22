@@ -1,4 +1,4 @@
-import ProfileCard from '@/components/ProfileCard'
+import ProfileCard, { Participant } from '@/components/ProfileCard'
 import { Button } from '@material-tailwind/react'
 import Link from 'next/link'
 import { useRouter } from 'next/router'
@@ -37,7 +37,7 @@ export default function TeacherForm() {
   //         '/img/girl-2.jpeg'
   //     }
   //   ]
-  const [participants, setParticipants] = useState([
+  const [participants, setParticipants] = useState<Participant[]>([
     {
       id: 1,
       full_name: 'Natalie Paisley',
@@ -45,7 +45,7 @@ export default function TeacherForm() {
       email: 'natalie@gmail.com',
       gender: 'Female',
       teacher: 'Nikhil Warke',
-      avatar: '/img/team-3.jpg'
+      avatar_url: '/img/team-3.jpg'
     }
   ])
 

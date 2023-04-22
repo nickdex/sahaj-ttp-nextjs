@@ -1,9 +1,16 @@
-import { Card, CardBody, CardFooter, CardHeader, Tooltip, Typography } from '@material-tailwind/react';
-import Image from 'next/image';
+import { Card, CardBody, CardFooter, CardHeader, Tooltip, Typography } from '@material-tailwind/react'
 
-export default function Example({ profile }) {
-  console.log(profile);
-  
+export interface Participant {
+  id: 1
+  full_name: 'Natalie Paisley'
+  age: '26'
+  email: 'natalie@gmail.com'
+  gender: 'Female'
+  teacher: 'Nikhil Warke'
+  avatar_url: '/img/team-3.jpg'
+}
+
+export default function Example({ profile }: { profile: Participant }) {
   const { full_name, age, email, gender, teacher, avatar_url } = profile
   return (
     <Card className="w-96">
