@@ -2,9 +2,42 @@ import ProfileCard from '@/components/ProfileCard'
 import { Button } from '@material-tailwind/react'
 import Link from 'next/link'
 import { useRouter } from 'next/router'
+import { useEffect, useState } from 'react'
 
 export default function TeacherForm() {
-  const participants = [
+  //   const participants =
+  //[
+  //     {
+  //       id: 1,
+  //       fullName: 'Natalie Paisley',
+  //       age: '26',
+  //       email: 'natalie@gmail.com',
+  //       gender: 'Female',
+  //       teacherName: 'Nikhil Warke',
+  //       avatar: '/img/team-3.jpg'
+  //     },
+  //     {
+  //       id: 2,
+  //       fullName: 'Natalie Paisley',
+  //       age: '26',
+  //       email: 'natalie@gmail.com',
+  //       gender: 'Female',
+  //       teacherName: 'Nikhil Warke',
+  //       avatar:
+  //         '/img/girl-1.jpeg'
+  //     },
+  //     {
+  //       id: 3,
+  //       fullName: 'Natalie Paisley',
+  //       age: '26',
+  //       email: 'natalie@gmail.com',
+  //       gender: 'Female',
+  //       teacherName: 'Nikhil Warke',
+  //       avatar:
+  //         '/img/girl-2.jpeg'
+  //     }
+  //   ]
+  const [participants, setParticipants] = useState([
     {
       id: 1,
       fullName: 'Natalie Paisley',
@@ -13,28 +46,14 @@ export default function TeacherForm() {
       gender: 'Female',
       teacherName: 'Nikhil Warke',
       avatar: '/img/team-3.jpg'
-    },
-    {
-      id: 2,
-      fullName: 'Natalie Paisley',
-      age: '26',
-      email: 'natalie@gmail.com',
-      gender: 'Female',
-      teacherName: 'Nikhil Warke',
-      avatar:
-        '/img/girl-1.jpeg'
-    },
-    {
-      id: 3,
-      fullName: 'Natalie Paisley',
-      age: '26',
-      email: 'natalie@gmail.com',
-      gender: 'Female',
-      teacherName: 'Nikhil Warke',
-      avatar:
-        '/img/girl-2.jpeg'
     }
-  ]
+  ])
+
+  useEffect(() => {
+    fetch(`/api/participant`)
+      .then((result) => result.json())
+      .then(setParticipants)
+  }, [])
   const router = useRouter()
   return (
     <div className="container mx-auto">
